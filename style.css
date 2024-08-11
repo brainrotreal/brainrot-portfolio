@@ -1,0 +1,333 @@
+body {
+    background-color: black;
+    overflow: hidden;
+}
+
+html.is-changing .transition-fade {
+    transition: 0.25s;
+    opacity: 1;
+}
+
+html.is-animating .transition-fade {
+    opacity: 0;
+}
+
+.item {
+    width: 300px;
+    height: 300px;
+    background: #1c1f2b;
+    margin: 150px 0 0 -150px;
+    border: 1;
+    font-size: large;
+    position: absolute;
+    border-radius: 10px;
+    text-align: center;
+    padding: 2em;
+    top: -10%;
+    left: max(calc(300px * 5), 100%);
+    -webkit-animation: 30s scroll linear infinite;
+            animation: 30s scroll linear infinite;
+    -webkit-animation-delay: calc(30s / 5 * (5 - var(--n)) * -1);
+            animation-delay: calc(30s / 5 * (5 - var(--n)) * -1);
+}
+
+.pause-animations .item {
+    -webkit-animation-play-state: paused;
+    animation-play-state: paused;
+}
+
+.item {
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .item:hover {
+    transform: scale(1.1);
+  }
+  
+  .item:hover::before {
+    opacity: 1;
+  }
+
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+.wrapper {
+    width: 90%;
+    height: 600px;
+    max-width: 1536px;
+    margin-inline: auto;
+    position: relative;
+    margin-top: 3em;
+    top: 100px;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);
+            mask-image: linear-gradient(to right, transparent, black, transparent);
+}
+
+.item::after, .item::before {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: conic-gradient(from var(--angle), #3535f7, #b503eb, #f00861, #3535f7);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    padding: 2px;
+    border-radius: 10px;
+
+    -webkit-animation: 3s spin linear infinite;
+
+            animation: 3s spin linear infinite;
+}
+.item::before {
+    -webkit-filter: blur(1.5rem);
+            filter: blur(1.5rem);
+    opacity: 0.3;
+}
+
+@-webkit-keyframes spin{
+    from{
+        --angle: 0deg;
+    } 
+    to{
+        --angle: 360deg;
+    }
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    } 
+    to{
+        --angle: 360deg;
+    }
+}
+
+header {
+    position: relative;
+    height: 50px;
+}
+
+header::before, header::after {
+    content: '';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    padding: 2px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #3535f7, #b503eb, #f00861);
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    -webkit-animation: 3s spin linear infinite;
+            animation: 3s spin linear infinite;
+}
+header::before {
+    -webkit-filter: blur(1.5rem);
+            filter: blur(1.5rem);
+    opacity: 1;
+}
+
+#pgIcon {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    top: 50%;
+    left: 5px;
+    margin-top: -20px;
+    border-radius: 10px;
+}
+
+@-webkit-keyframes scroll {
+    from {
+        left: 115%;
+    } to {
+        left: -15%
+    }
+}
+
+@keyframes scroll {
+    from {
+        left: 115%;
+    } to {
+        left: -15%
+    }
+}
+
+.custom-shape-divider-bottom-1722906498 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-1722906498 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 190px;
+}
+
+.custom-shape-divider-bottom-1722906498 .shape-fill {
+    fill: #0e0d0dbb;
+}
+
+.custom-shape-divider-bottom-1722906498E {
+    position: absolute;
+    bottom: -30px;
+    left: -700px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+}
+
+.custom-shape-divider-bottom-1722906498E svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 190px;
+}
+
+.custom-shape-divider-bottom-1722906498E .shape-fill {
+    fill: #1b1919;
+}
+
+.custom-shape-divider-bottom-1722906498ER {
+    position: absolute;
+    bottom: -30px;
+    left: 700px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.custom-shape-divider-bottom-1722906498ER svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 190px;
+}
+
+.custom-shape-divider-bottom-1722906498ER .shape-fill {
+    fill: #141313;
+}
+
+nav {
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+ul {
+    list-style-type: none;
+    position: inherit;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    left: 50px;
+    bottom: 21px;
+}
+
+li {
+    float: left;
+  }
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 13px;
+    text-decoration: none;
+    font-family: monospace;
+    font-size: 15px;
+    background-color: #1c1f2b;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+li a:hover {
+    background-color: #292d3d;
+}
+
+#maintext {
+    color: #f9f9f9;
+    position: absolute;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    font-size: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+.custom-shape-divider-bottom-17229064982 {
+    position: absolute;
+    bottom: 0;
+    left: -700px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.custom-shape-divider-bottom-17229064982 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 190px;
+}
+
+.custom-shape-divider-bottom-17229064982 .shape-fill {
+    fill: #0e0d0dbb;
+}
+
+.custom-shape-divider-bottom-1722906498E2 {
+    position: absolute;
+    bottom: -30px;
+    left: 0px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 2;
+}
+
+.custom-shape-divider-bottom-1722906498E2 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 190px;
+}
+
+.custom-shape-divider-bottom-1722906498E2 .shape-fill {
+    fill: #1b1919;
+}
+
+.custom-shape-divider-bottom-1722906498ER2 {
+    position: absolute;
+    bottom: -30px;
+    left: 800px;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+    z-index: 1;
+}
+
+.custom-shape-divider-bottom-1722906498ER2 svg {
+    position: relative;
+    display: block;
+    width: calc(118% + 1.3px);
+    height: 190px;
+}
+
+.custom-shape-divider-bottom-1722906498ER2 .shape-fill {
+    fill: #141313;
+}
