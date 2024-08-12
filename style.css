@@ -239,11 +239,31 @@ ul {
     bottom: 21px;
 }
 
-li {
+.pages {
     float: left;
-  }
+}
 
-li a {
+.socials {
+    float: right;
+}
+
+.socials a img {
+    position: relative;
+    height: 40px;
+    width: 40px;
+    padding: 13px;
+    left: -43px;
+    top: -11px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.socials a img:hover {
+    transform: scale(1.1);
+}
+
+
+
+.pages a {
     display: block;
     color: white;
     text-align: center;
@@ -256,7 +276,7 @@ li a {
     margin-left: 10px;
 }
 
-li a:hover {
+.pages a:hover {
     background-color: #292d3d;
 }
 
