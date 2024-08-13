@@ -255,13 +255,12 @@ ul {
     left: -43px;
     top: -11px;
     transition: transform 0.2s ease-in-out;
+    margin-left: -13px;
 }
 
 .socials a img:hover {
     transform: scale(1.1);
 }
-
-
 
 .pages a {
     display: block;
