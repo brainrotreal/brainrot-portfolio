@@ -1,6 +1,6 @@
 body {
     background-color: black;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 html.is-changing .transition-fade {
@@ -112,6 +112,7 @@ html.is-animating .transition-fade {
 header {
     position: relative;
     height: 50px;
+    transition: 0.5s;
 }
 
 header::before, header::after {
@@ -126,13 +127,14 @@ header::before, header::after {
     top: 50%;
     left: 50%;
     translate: -50% -50%;
-    -webkit-animation: 3s spin linear infinite;
-            animation: 3s spin linear infinite;
 }
 header::before {
     -webkit-filter: blur(1.5rem);
             filter: blur(1.5rem);
     opacity: 1;
+}
+header:hover {
+    transform: scale(1.01);
 }
 
 #pgIcon {
@@ -349,4 +351,36 @@ ul {
 
 .custom-shape-divider-bottom-1722906498ER2 .shape-fill {
     fill: #141313;
+}
+
+.scrollpage {
+    position: absolute;
+    top: 199%;
+    left: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: #1b1919;
+    margin: -50% 0 0 -50%;
+    z-index: 5;
+}
+
+#abtme {
+    color: #f9f9f9;
+    position: absolute;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    translate: -50% -50%;
+    font-size: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    transition: 0.5s;
+}
+
+span {
+    transition: 0.3s;
+}
+
+span:hover {
+    color: yellow;
+    font-size: 80px;
 }
