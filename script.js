@@ -1,11 +1,17 @@
-const items = document.querySelectorAll('.item');
-
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       entry.target.classList.add('show');
+      if (entry.target.classList.contains('inactive-letter')) {
+        entry.target.classList.remove('inactive-letter');
+        entry.target.classList.add('letter-animation');
+      }
     } else {
       entry.target.classList.remove('show');
+      if (entry.target.classList.contains('letter-animation')) {
+        entry.target.classList.remove('letter-animation');
+        entry.target.classList.add('inactive-letter');
+      }
     }
   });
 })
@@ -13,12 +19,13 @@ const observer = new IntersectionObserver((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer.observe(el));
 
-items.forEach((item) => {
-  item.addEventListener('mouseover', () => {
-    document.body.classList.add('pause-animations');
-  });
+const socials = document.querySelectorAll('.socials a');
 
-  item.addEventListener('mouseout', () => {
-    document.body.classList.remove('pause-animations');
+for (item of socials) {
+  item.addEventListener('click', () => {
+    item.classList.add('clicked');
+    setTimeout(() => {
+      item.classList.remove('clicked');
+    }, 1000);
   });
-});
+}

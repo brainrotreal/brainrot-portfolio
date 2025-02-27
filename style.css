@@ -1,6 +1,7 @@
 body {
     background-color: black;
     overflow-x: hidden;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
 }
 
 html.is-changing .transition-fade {
@@ -16,103 +17,6 @@ html.is-animating .transition-fade {
     opacity: 0;
     width: 0px;
     height: 0px;
-}
-
-.item {
-    width: 300px;
-    height: 300px;
-    background: #1c1f2b;
-    margin: 150px 0 0 -150px;
-    border: 1;
-    font-size: large;
-    position: absolute;
-    border-radius: 10px;
-    text-align: center;
-    padding: 2em;
-    top: -10%;
-    left: max(calc(300px * 5), 100%);
-    -webkit-animation: 30s scroll linear infinite;
-            animation: 30s scroll linear infinite;
-    -webkit-animation-delay: calc(30s / 5 * (5 - var(--n)) * -1);
-            animation-delay: calc(30s / 5 * (5 - var(--n)) * -1);
-}
-
-.pause-animations .item {
-    -webkit-animation-play-state: paused;
-    animation-play-state: paused;
-}
-
-.item {
-    transition: transform 0.2s ease-in-out;
-  }
-  
-  .item:hover {
-    transform: scale(1.1);
-  }
-  
-  .item:hover::before {
-    opacity: 1;
-  }
-
-
-@property --angle{
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-}
-
-.wrapper {
-    width: 90%;
-    height: 600px;
-    max-width: 1536px;
-    margin-inline: auto;
-    position: relative;
-    margin-top: 3em;
-    top: 100px;
-    overflow: hidden;
-    -webkit-mask-image: linear-gradient(to right, transparent, black, transparent);
-            mask-image: linear-gradient(to right, transparent, black, transparent);
-}
-
-.item::after, .item::before {
-    content: '';
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    background-image: conic-gradient(from var(--angle), #3535f7, #b503eb, #f00861, #3535f7);
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -1;
-    padding: 2px;
-    border-radius: 10px;
-
-    -webkit-animation: 3s spin linear infinite;
-
-            animation: 3s spin linear infinite;
-}
-.item::before {
-    -webkit-filter: blur(1.5rem);
-            filter: blur(1.5rem);
-    opacity: 0.3;
-}
-
-@-webkit-keyframes spin{
-    from{
-        --angle: 0deg;
-    } 
-    to{
-        --angle: 360deg;
-    }
-}
-
-@keyframes spin{
-    from{
-        --angle: 0deg;
-    } 
-    to{
-        --angle: 360deg;
-    }
 }
 
 header {
@@ -151,22 +55,6 @@ header:hover {
     left: 5px;
     margin-top: -20px;
     border-radius: 10px;
-}
-
-@-webkit-keyframes scroll {
-    from {
-        left: 115%;
-    } to {
-        left: -15%
-    }
-}
-
-@keyframes scroll {
-    from {
-        left: 115%;
-    } to {
-        left: -15%
-    }
 }
 
 .custom-shape-divider-bottom-1722906498 {
@@ -270,21 +158,8 @@ ul {
     transform: scale(1.1);
 }
 
-.pages a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 13px;
-    text-decoration: none;
-    font-family: monospace;
-    font-size: 15px;
-    background-color: #1c1f2b;
-    border-radius: 5px;
-    margin-left: 10px;
-}
-
-.pages a:hover {
-    background-color: #292d3d;
+.clicked {
+    transform: scale(0.85);
 }
 
 #maintext {
@@ -361,7 +236,10 @@ ul {
 
 .scrollpage {
     position: absolute;
-    top: 199%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 200%;
     left: 50%;
     width: 100%;
     height: 100%;
@@ -374,20 +252,26 @@ ul {
     color: #f9f9f9;
     position: absolute;
     height: 500px;
-    left: 56%;
-    top: 50%;
-    translate: -50% -50%;
+    align-self: end;
     font-size: 100px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin-bottom: 180px;
 }
 
+#myname {
+    align-self: center;
+    font-size: 100px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    margin: 50px;
+    position: relative;
+    background-color: transparent;
+}
 
-
-span {
+span:not(.letter-animation) {
     transition: 0.3s;
 }
 
-span:hover {
+span:not(.letter-animation):hover {
     color: yellow;
     font-size: 120px;
 }
@@ -405,3 +289,33 @@ span:hover {
     filter: blur(0);
     transition: all 2s;
 }
+
+.letter-animation {
+    display: inline-block;
+    animation: typing 2s ease-in-out 1;
+    animation-delay: calc(var(--char-index) * 0.5s);
+    white-space: nowrap;
+    overflow: hidden;
+    color: #380fcc;
+    transition: 0.2s;
+    text-shadow: 0px 0px 8px #380fcc;
+    overflow: visible;
+}
+
+.letter-animation:hover {
+    color: #ee6509;
+    text-shadow: 0px 0px 10px #ee6509;
+}
+
+@keyframes typing {
+    0% {
+        transform: translateY(0%);
+    }
+    50% {
+        transform: translateY(-15%);
+    }
+    100% {
+        transform: translateY(0%);
+    }
+}
+
