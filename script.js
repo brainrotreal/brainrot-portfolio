@@ -29,3 +29,26 @@ for (item of socials) {
     }, 1000);
   });
 }
+
+const skillsContainers = document.querySelectorAll('.skills-container');
+
+if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  addAnimation();
+}
+
+function addAnimation() {
+    skillsContainers.forEach(scroller => {
+      scroller.setAttribute("data-animated", true);
+
+      const skillsElement = scroller.querySelector('.skills')
+      const skills = Array.from(skillsElement.children)
+
+      skills.forEach(item => {
+        const duplicatedItem = item.cloneNode(true);
+        skillsElement.appendChild(duplicatedItem);
+        duplicatedItem.setAttribute('aria-hidden', true);
+        duplicatedItem.classList.add('duplicated');
+      });
+    });
+}
+
