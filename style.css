@@ -145,7 +145,7 @@ ul {
 
 .scrollpage {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     width: 100vw;
@@ -154,13 +154,11 @@ ul {
     min-height: 100vh;
 }
 
-#abtme {
+.title {
     color: #f9f9f9;
-    position: absolute;
-    height: 500px;
     font-size: 100px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    margin-bottom: 180px;
+    margin-bottom: -1vh;
 }
 
 #myname {
@@ -168,7 +166,6 @@ ul {
     font-size: 100px;
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     margin: 50px;
-    position: relative;
     background-color: transparent;
 }
 
@@ -189,6 +186,7 @@ ul {
     border: #3535f7 solid 3px;
     box-shadow: #3535f7 0px 0px 20px;
     overflow: visible;
+    margin-bottom: 100px;
 }
 
 .skill {
@@ -287,4 +285,87 @@ span:not(.letter-animation):hover {
 
 .waves-img {
     width: 100%;
+}
+
+.projects {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 50px;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.project {
+    background-color: #1a1818;
+    padding: 30px;
+    width: 40vh;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: start;
+    border-radius: 10px;
+    border: #12129e solid 3px;
+    box-shadow: #12129e 0px 0px 20px;
+    transition: 0.6s;
+    margin: 20px;
+}
+
+.project:hover {
+    transform: scale(1.01);
+    box-shadow: #12129e 0px 0px 30px;
+}
+
+.project-title {
+    color: #f9f9f9;
+    font-size: large;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.project-description {
+    color: #f9f9f9bb;
+    font-size: medium;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.project img {
+    width: 80%;
+    height: 80%;
+    object-fit: cover;
+    align-self: center;
+    margin: 20px;
+    border-radius: 10px;
+    border: #12129e solid 2px;
+    filter: blur(3px);
+    transition: 0.3s;
+}
+
+.project img:hover {
+    filter: blur(0px);
+}
+
+.project button {
+    background-color: #121266;
+    color: #f9f9f9;
+    font-size: medium;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 10px;
+    border-radius: 10px;
+    border: #12129e solid 2px;
+    transition: 0.6s;
+    width: 100%;
+}
+
+.project a {
+    width: 100%;
+}
+
+.project button:hover {
+    background-color: #12129e;
+    color: #f9f9f9;
+    border: none;
+    box-shadow: #12129e 0px 0px 10px;
+    scale: 1.1;
 }
