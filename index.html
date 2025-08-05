@@ -24,14 +24,21 @@
 
     <main>
         <section class="welcome-page">
+            <div class="isometric-container"></div>
             <h1 id="maintext" style="--n: 1" class="hidden"><span>Welcome</span> <span>to</span> <span>my</span> <span>website.</span></h1>
+            <div class="drag window" id="abtwindow">
+                <div id="abtwindow-header">
+                    <button class="closebtn btnsmall"></button>
+                    <button class="minbtn btnsmall"></button>
+                </div>
+            </div>
             <div class="waves">
                 <img src="img/layered-waves-haikei.svg" alt="WavesDivider" class="waves-img">
             </div>
         </section>
 
         <section class="scrollpage">
-            <h2 id="abtme" class="hidden title">About Me</h2>
+            <h2 id="abtme" class="hidden title">Hi, I'm</h2>
             <h3 class="hidden" id="myname"><span style="--char-index: 1" class="letter-animation">D</span><span style="--char-index: 2" class="letter-animation">a</span><span style="--char-index: 3" class="letter-animation">s</span><span style="--char-index: 4" class="letter-animation">k</span><span style="--char-index: 5" class="letter-animation">e</span><span style="--char-index: 6" class="letter-animation">y</span><span style="--char-index: 7" class="letter-animation">_</span></h3>
             <div class="skills-container">
                 <div class="skills">
@@ -48,7 +55,7 @@
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python Icon">
                     </figure>
                     <figure class="skill" style="--number: 5">
-                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="Java Icon">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original.svg" alt="MySQL Icon">
                     </figure>
                     <figure class="skill" style="--number: 6">
                         <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg" alt="Java Icon">
@@ -63,38 +70,48 @@
             </div>
 
             <h3 id="projects-text" class="hidden title">Projects</h3>
+            <search id="search-project"><input type="search" name="search" id="search-project-bar" placeholder="Insert project name"></search>
+            <select name="category" id="category-selector">
+                <option value="all" selected>All</option>
+                <option value="luau">LuaU/Roblox</option>
+                <option value="python">Python</option>
+                <option value="nodejs">NodeJS</option>
+                <option value="java">Java</option>
+                <option value="html">HTML/CSS/JS</option>
+                <option value="mysql">MySQL</option>
+            </select>
             <div class="projects">
-                <article class="project hidden">
+                <article class="project luau">
                     <h4 class="project-title">Downed and Finishing System</h4>
                     <p class="project-description">LuaU/Roblox</p>
                     <img src="img/thumbnail1.png">
                     <a href="project_display/projectdisplay.html?title=Downed-and-Finishing-System&description=LuaU/Roblox&projectid=1"><button>View More</button></a>
                 </article>
-                <article class="project hidden">
+                <article class="project luau">
                     <h4 class="project-title">Clone Snake System</h4>
                     <p class="project-description">LuaU/Roblox</p>
                     <img src="img/thumbnail2.png">
                     <a href="project_display/projectdisplay.html?title=Clone-Snake-System&description=LuaU/Roblox&projectid=2"><button>View More</button></a>
                 </article>
-                <article class="project hidden">
+                <article class="project html">
+                    <h4 class="project-title">Online Library Project</h4>
+                    <p class="project-description">HTML/CSS/JS</p>
+                    <img src="img/thumbnail3.png">
+                    <a href="https://brainrotreal.github.io/online-library-project/"><button>View More</button></a>
+                </article>
+                <article class="project">
                     <h4 class="project-title">Downed and Finishing System</h4>
                     <p class="project-description">LuaU/Roblox</p>
                     <img src="img/thumbnail1.png">
                     <a href="project_display/projectdisplay.html?title=Downed-and-Finishing-System&description=LuaU/Roblox&projectid=1"><button>View More</button></a>
                 </article>
-                <article class="project hidden">
+                <article class="project">
                     <h4 class="project-title">Downed and Finishing System</h4>
                     <p class="project-description">LuaU/Roblox</p>
                     <img src="img/thumbnail1.png">
                     <a href="project_display/projectdisplay.html?title=Downed-and-Finishing-System&description=LuaU/Roblox&projectid=1"><button>View More</button></a>
                 </article>
-                <article class="project hidden">
-                    <h4 class="project-title">Downed and Finishing System</h4>
-                    <p class="project-description">LuaU/Roblox</p>
-                    <img src="img/thumbnail1.png">
-                    <a href="project_display/projectdisplay.html?title=Downed-and-Finishing-System&description=LuaU/Roblox&projectid=1"><button>View More</button></a>
-                </article>
-                <article class="project hidden">
+                <article class="project">
                     <h4 class="project-title">Downed and Finishing System</h4>
                     <p class="project-description">LuaU/Roblox</p>
                     <img src="img/thumbnail1.png">
